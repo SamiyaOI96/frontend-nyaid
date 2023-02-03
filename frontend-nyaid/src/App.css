@@ -1,65 +1,79 @@
-.App {
-  text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 ul{
   list-style-type: none;
+}
+h1{text-align: center;
+  font-size: xx-large;
+  font-family: 'Courier New',monospace;
+  text-shadow: 2px 2px #8c8989;
+  font-weight: bolder;
+
 }
 .newMA__buttons{
   display:flex;
   flex-direction: column;
+  font-family: 'Courier New',monospace;
   font-size: large;
-  text-shadow: 2px 2px #cac3c3;
+  text-shadow: 2px 2px #585757;
   font-weight: bold;
+  
 }
 h2{
   text-align: center;
-  font-size: xx-large;
+  font-size: x-large;
   font-family: 'Courier New',monospace;
-  text-shadow: 2px 2px #cac3c3;
+  text-shadow: 2px 2px #8c8989;
   font-weight: bolder;
 }
 .new__MA__form{
 font-family: 'Courier New',monospace;
 font-size: large;
-text-shadow: 2px 2px #cac3c3;
+text-shadow: 2px 2px #8c8989;
 font-weight: bold;
 display:flex;
 flex-direction: column;
 font-size: larger;
 
+
 }
+input{
+  background-color: #e5d2e3;
+}
+
+body{
+  background: #fff;
+}
+
+/* .title {
+  font-size: 2.5rem;
+  font-family: "Lobster", cursive;
+} */
+
+body {
+  animation: scroll 200s linear infinite;
+  background: url("https://images.unsplash.com/photo-1465146633011-14f8e0781093?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3450&q=80"),
+    #111111;
+  color: #eee;
+  height: 100vh;
+  min-width: 360px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
+  perspective-origin: 50% 50%;
+}
+
+@keyframes scroll {
+  100% {
+    background-position: 0px -3000px;
+  }
+}
+
+@media (prefers-reduced-motion) {
+  body {
+    animation: scroll 400s linear infinite;
+  }
+}
+

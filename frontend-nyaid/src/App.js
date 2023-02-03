@@ -3,7 +3,7 @@ import './App.css';
 import NewMA from './NewMA';
 import axios from 'axios';
 
-
+const API_URL = "http://localhost:5000/nyc/";
 const handleMASubmit=(data)=>{
 
 }
