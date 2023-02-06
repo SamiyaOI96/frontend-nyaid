@@ -1,30 +1,15 @@
-// import { Link } from 'react-router-dom'
-// import Boroughs from './Brooklyn';
+import './App.css';
+import React from 'react';
 
-// const DashBoard=()=>{
-//     return(
-//         <div>
-//             Hello From DashBoard
-//         </div>
+
+const DashBoard=()=>{
+    return(
+        <div>
+            <h2>Mutual Aid across the Boroughs</h2>
+        </div>
         
 
-//     )
-// }
+    )
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// export default DashBoard;
+export default DashBoard;

@@ -1,3 +1,6 @@
+import './App.css';
+import React from 'react';
+
 const FourOhFour4=()=>{
 
     return(

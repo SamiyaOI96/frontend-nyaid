@@ -1,13 +1,29 @@
 
-Nav{
+nav{
   display: flex;
   justify-content: space-around;
   align-items: center;
-  min-height: 12vh;
+  min-height: 10vh;
   color:white;
 }
-ul{
+ul {
   list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color:white;
+
+}
+li{
+  margin-bottom:10px;
+  min-width:100%;
+  word-break: break-all;
+  min-width:25vh;
+  min-height: 28vh;
+  font-family: 'Courier New',monospace;
+  font-size: x-large;
+  text-shadow: 2px 2px #585757;
+  font-weight: bold;
 }
 h1{text-align: center;
   font-size: xx-large;
@@ -27,10 +43,11 @@ h1{text-align: center;
 }
 h2{
   text-align: center;
-  font-size: x-large;
+  font-size: xx-large;
   font-family: 'Courier New',monospace;
   text-shadow: 2px 2px #8c8989;
   font-weight: bolder;
+  min-height: 18vh;
 }
 .new__MA__form{
 font-family: 'Courier New',monospace;
@@ -84,11 +101,12 @@ body {
 }
 .nav__links
 {
-  list-style-type: none;
+  color:white
+  /* list-style-type: none;
   width:50%;
   display: flex;
   justify-content: space-around ;
-  align-items:center;
+  align-items:center; */
 
-}
+} 
 
