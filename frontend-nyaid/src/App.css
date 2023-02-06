@@ -1,5 +1,11 @@
 
-
+Nav{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 12vh;
+  color:white;
+}
 ul{
   list-style-type: none;
 }
@@ -75,5 +81,14 @@ body {
   body {
     animation: scroll 400s linear infinite;
   }
+}
+.nav__links
+{
+  list-style-type: none;
+  width:50%;
+  display: flex;
+  justify-content: space-around ;
+  align-items:center;
+
 }
 
