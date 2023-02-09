@@ -46,6 +46,7 @@ const NewMA=(props)=>{
             <form onSubmit={handleNewMASubmit}>
                 <div className="newMA__form">
                 <ul>
+                    <div className="Boxes__aid">
                     <li>
                     <div className="newMA__buttons">
                         <label>Borough</label>
@@ -78,6 +79,7 @@ const NewMA=(props)=>{
                         <div><input type="submit" value="Submit"/></div>
                     </div>
                     </li>
+                    </div>
                 </ul>
                 </div>
             </form>
