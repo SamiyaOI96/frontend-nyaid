@@ -11,31 +11,33 @@ import Queens from './Queens';
 import StatenIsland from './StatenIsland';
 import {BrowserRouter as Router,Routes,Route} from 'react-router-dom';
 import DashBoard from './DashBoard';
-// export {Switch} from 'react-router-dom'
+// import NewMA from './NewMA';
+// import MutualAid from './MutualAid';
+// import { useEffect,useState } from 'react';
 
 
-const API_URL = "http://localhost:5000/nyc/";
-const handleMASubmit=(data)=>{
 
-}
+// wanting to keep track or a variable or state that keeps track of which borough im in
+// wanting to change the state and the varibale
+// inlude a second parameter in axios call the second parameter that would take in the state variable and use the state variable
+// as a the query parameter in the function/
+// const [mutualaidData, setMutualAidData] = useState([]);
 
-//adding land acknowledgement at the bottom of the home page
-//potentially creating a variable as some component in the page // be careful with validating if a borough is correct 
-
+// const API_URL = "http://localhost:5000/";
 
 function App() {
+    
   return (
     <Router>
     <div className="App">
         <Nav/>
-        <h2>Mutual Aid across the Boroughs</h2>
         <Routes>
-            <Route path='/' exact component={DashBoard}/>
-            <Route path='/brooklyn' component={Brooklyn}/>
-            <Route path='/bronx' component={Bronx}/>
-            <Route path='/manhattan' component={Manhattan}/>
-            <Route path='/queens' component={Queens}/>
-            <Route path='/statenisland' component={StatenIsland}/>
+            <Route path='/' exact element={<DashBoard/>}/>
+            <Route path='/brooklyn' element={<Brooklyn/>}/>
+            <Route path='/bronx' element={<Bronx/>}/>
+            <Route path='/manhattan' element={<Manhattan/>}/>
+            <Route path='/queens' element={<Queens/>}/>
+            <Route path='/statenisland' element={<StatenIsland/>}/>
         </Routes>
         </div>
     </Router>
@@ -43,7 +45,9 @@ function App() {
         
             
   );
-}
+};
+
+
 
 
 

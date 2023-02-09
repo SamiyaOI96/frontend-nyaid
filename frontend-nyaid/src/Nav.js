@@ -6,8 +6,8 @@ import {Link} from 'react-router-dom'
 
 function Nav() {
     const navStyle={
-        color:'white'
-        // text-decoration:'none'
+        color:'white',
+        textDecoration: "none",
     };
     // const linkUnder={
     //     text-decoration: none;
@@ -16,24 +16,28 @@ function Nav() {
     <nav>
         <div className="nav__links">
         <ul>
-                <Link style={navStyle} to='dashboard'>
+                <Link style={navStyle} to='/'>
                     <li>DashBoard</li>
                 </Link>
                 
                 <Link style={navStyle} to='/brooklyn'>
                     <li>Brooklyn</li>
                 </Link>
+                
                 <Link style={navStyle} to='/bronx'>
                     <li>Bronx</li>
                 </Link>
+                
                 <Link style={navStyle} to='/manhattan'>
                     <li>Manhattan</li>
                 </Link>
+                
                 <Link style={navStyle} to ='/queens'>
                     <li>Queens</li>
                 </Link>
-                <Link style={navStyle} to='statenisland'>
-                <li>Staten Island</li>
+                
+                <Link style={navStyle} to='/statenisland'>
+                    <li>Staten Island</li>
                 </Link>
         </ul>
         </div>

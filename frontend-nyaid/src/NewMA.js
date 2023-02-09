@@ -22,7 +22,7 @@ const NewMA=(props)=>{
     const handleEmailChange = (event) => {
         setNewEmail(event.target.value)
     };
-    const handleMASubmit=(event)=>{
+    const handleNewMASubmit=(event)=>{
         event.preventDefault();
         const newMA={
         "borough":newBorough,
@@ -30,7 +30,7 @@ const NewMA=(props)=>{
         "category":newCategory,
         "website":newWebsite,
         "email":newEmail}
-        props.onMASubmit(newMA);
+        props.onMutualAidSubmit(newMA);
         setNewBorough('')
         setNewName('')
         setNewCategory('')
@@ -43,7 +43,7 @@ const NewMA=(props)=>{
         //<div className="new-card">
             //<h2>Create a New Card</h2>
             //form="new-card-form">
-            <form onSubmit={handleMASubmit}>
+            <form onSubmit={handleNewMASubmit}>
                 <div className="newMA__form">
                 <ul>
                     <li>

@@ -11,19 +11,31 @@ ul {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  color:white;
+  color:white
 
 }
+h3{font-family: 'Courier New',monospace;
+  font-size: x-large;
+  text-shadow: 2px 2px #585757;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 34vh;
+
+}
+
 li{
   margin-bottom:10px;
   min-width:100%;
   word-break: break-all;
-  min-width:25vh;
-  min-height: 28vh;
+  min-width:24vh;
+  min-height: 4vh;
   font-family: 'Courier New',monospace;
   font-size: x-large;
   text-shadow: 2px 2px #585757;
   font-weight: bold;
+
 }
 h1{text-align: center;
   font-size: xx-large;
@@ -32,15 +44,7 @@ h1{text-align: center;
   font-weight: bolder;
 
 }
-.newMA__buttons{
-  display:flex;
-  flex-direction: column;
-  font-family: 'Courier New',monospace;
-  font-size: large;
-  text-shadow: 2px 2px #585757;
-  font-weight: bold;
-  
-}
+
 h2{
   text-align: center;
   font-size: xx-large;
@@ -49,7 +53,7 @@ h2{
   font-weight: bolder;
   min-height: 18vh;
 }
-.new__MA__form{
+.new__MA__section{
 font-family: 'Courier New',monospace;
 font-size: large;
 text-shadow: 2px 2px #8c8989;
@@ -57,11 +61,28 @@ font-weight: bold;
 display:flex;
 flex-direction: column;
 font-size: larger;
-
-
 }
+.newMA__form{
+text-shadow: 2px 2px #8c8989;
+font-weight: bold;
+font-size: larger;
+min-width: 24vh;
+min-height:10vh
+}
+.newMA__buttons{
+
+  font-family: 'Courier New',monospace;
+  font-size: large;
+  text-shadow: 2px 2px #cac3c3;
+  text-shadow: 2px 2px #585757;
+  font-weight: bold;
+}
+
+
 input{
   background-color: #e5d2e3;
+  display:flex;
+flex-direction: column;
 }
 
 body{
@@ -101,12 +122,39 @@ body {
 }
 .nav__links
 {
-  color:white
-  /* list-style-type: none;
-  width:50%;
-  display: flex;
-  justify-content: space-around ;
-  align-items:center; */
+  color:white;
+  min-height: 18vh;
 
 } 
 
+h4{
+  text-align: center;
+  font-size: xx-large;
+  font-family: 'Courier New',monospace;
+  text-shadow: 2px 2px #8c8989;
+  font-weight: bolder;
+  max-height: 80vh;
+}
+.MA__elements{
+overflow: scroll;
+display:flex;
+flex-direction: column;
+max-height: 40vh;
+min-width: 12rem;
+border: 1.5px solid rgb(251, 7, 194); 
+margin: .5rem;
+font-style: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+color:white;
+
+}
+form{
+  display: flex;
+  justify-content: space-around;
+}
+/* display=none changing the css in the app */
+.mutualAidList__css{
+  font-size: x-small;
+  display:flex;
+  flex-direction: row;
+  
+}
