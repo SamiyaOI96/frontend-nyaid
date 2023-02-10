@@ -82,18 +82,7 @@ const onOneAidSubmit = (newMA) => {
     alert('Couldn\'t create new Mutual aid')
 })
 }
-useEffect (() => {
-    console.log("is anythin working?")
-    if  (!selectedOneAid.id.id) {
-        return;
-    }
-    axios.get(`${API_URL}boroughs/mutualaids/?borough_id=2id&${selectedOneAid.id}`).then((response) => {
-        setOneAidData(response.data.oneaid);
-    }).catch((error) => {
-        console.log('Error: Couldn\'t get all one aid', error)
-        alert('Couldn\'t get all oneaid')
-    });
-}, [selectedOneAid.id]);
+// cd
   //deleting aid group 
 
 //   http://127.0.0.1:5000/boroughs/mutualaids?borough_id=1&id=2
