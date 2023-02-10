@@ -38,7 +38,7 @@ const NewMA=(props)=>{
         "category":newCategory,
         "website":newWebsite,
         "email":newEmail}
-        props.onMutualAidSubmit(newMA);
+        props.onOneAidSubmit(newMA);
         setNewBoroughName('')
         // setNewBorough('')
         setNewName('')

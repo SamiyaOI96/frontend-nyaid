@@ -11,6 +11,7 @@ import Queens from './Queens';
 import StatenIsland from './StatenIsland';
 import {BrowserRouter as Router,Routes,Route} from 'react-router-dom';
 import DashBoard from './DashBoard';
+import BoroughsList from './BoroughsList';
 
 
 // const API_URL = "http://localhost:5000/";
@@ -28,6 +29,7 @@ function App() {
             <Route path='/manhattan' element={<Manhattan/>}/>
             <Route path='/queens' element={<Queens/>}/>
             <Route path='/statenisland' element={<StatenIsland/>}/>
+            {/* <Route path='/mutualaids/id' element={<BoroughsList/>}/> */}
         </Routes>
         </div>
     </Router>

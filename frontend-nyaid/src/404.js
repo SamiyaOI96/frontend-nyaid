@@ -14,7 +14,7 @@ const FourOhFour4=()=>{
 }
 
 
-
+{/* <div><Link> to= /mutualaids/{props.mutualaid.id}Name:{props.mutualaid.name}</Link></div> */}
 
 
 
