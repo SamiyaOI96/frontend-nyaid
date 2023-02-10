@@ -1,15 +1,22 @@
 import { useState } from "react";
 
 const NewMA=(props)=>{
-    const [newBorough,setNewBorough]=useState('');
+    // const [newBorough,setNewBorough]=useState('');
+    const [newBoroughName,setNewBoroughName]=useState('');
     const [newName,setNewName]=useState('');
     const [newCategory,setNewCategory]=useState('');
     const [newWebsite,setNewWebsite]=useState('');
     const [newEmail,setNewEmail]=useState('');
     
-    const handleBoroughChange = (event) => {
-        setNewBorough(event.target.value)
+
+    const handleBoroughNameChange = (event) => {
+        setNewBoroughName(event.target.value)
     };
+
+    // const handleBoroughChange = (event) => {
+    //     setNewBorough(event.target.value)
+    // };
+
     const handleNameChange=(event)=>{
         setNewName(event.target.value)
     };
@@ -25,13 +32,15 @@ const NewMA=(props)=>{
     const handleNewMASubmit=(event)=>{
         event.preventDefault();
         const newMA={
-        "borough":newBorough,
+        "borough_name":newBoroughName,
+        // "borough":newBorough,
         "name":newName,
         "category":newCategory,
         "website":newWebsite,
         "email":newEmail}
         props.onMutualAidSubmit(newMA);
-        setNewBorough('')
+        setNewBoroughName('')
+        // setNewBorough('')
         setNewName('')
         setNewCategory('')
         setNewWebsite('')
@@ -43,6 +52,7 @@ const NewMA=(props)=>{
         //<div className="new-card">
             //<h2>Create a New Card</h2>
             //form="new-card-form">
+            //onSelect={borough,borough_name} take in the id and the borough_name and then 
             <form onSubmit={handleNewMASubmit}>
                 <div className="newMA__form">
                 <ul>
@@ -50,8 +60,12 @@ const NewMA=(props)=>{
                     <li>
                     <div className="newMA__buttons">
                         <label>Borough</label>
-                        <input type="text" value={newBorough} onChange={handleBoroughChange}/>
+                        <input type="text" value={newBoroughName} onChange={handleBoroughNameChange}/>
                     </div>
+                    {/* <div className="newMA__buttons">
+                        <label>Borough</label>
+                        <input select="text" value={newBorough} onChange={handleBoroughChange}/>
+                    </div> */}
                     </li>
                     <li>
                     <div className="newMA__buttons">

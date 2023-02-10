@@ -4,6 +4,7 @@ const MutualAid = (props) => {
 
     return (
         <div className="mutualAidList__css" onClick={() => props.deleteMutualAidItem(props.mutualAid)}>
+        <div>Borough:{props.mutualaid.borough_name}</div>
         
         <div>Name:{props.mutualaid.name}</div>
         
