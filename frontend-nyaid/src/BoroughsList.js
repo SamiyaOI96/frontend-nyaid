@@ -7,16 +7,15 @@ import {BrowserRouter as Router,Routes,Route} from 'react-router-dom';
 const API_URL = "http://localhost:5000/";
 
 const BoroughsList=(props)=>{
-
     console.log("checking",props)
-
-    
-        // const oneaidElements = props.oneaidData.map((oneaid) => {
-        //     return (<OneAid oneaid={oneaid}
-        //         deleteOneAidItem={props.deleteOneAidItem}
-        //         //passing it as a prop to card
-        //     ></OneAid>)
-        // })
+    //prior to deleting it was array and then became one object after checking!!!
+    console.log("one aid",props.oneaidData)
+        const oneaidElements = props.oneaidData.map((oneaid) => {
+            return (<OneAid oneaid={oneaid}
+                deleteOneAidItem={props.deleteOneAidItem}
+                //passing it as a prop to card
+            ></OneAid>)
+        })
 
 //
     
@@ -26,7 +25,7 @@ const BoroughsList=(props)=>{
                 <section>
                     <h2>Recently added Mutual Aid : {props.oneaidData.name} </h2>
                     
-                    {/* <div> {oneaidElements}</div> */}
+                    <div> {oneaidElements}</div>
                     {/* <div className='single-items__container'>
         
                     <div>Name:{props.oneaid.name}</div>

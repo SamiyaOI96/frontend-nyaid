@@ -20,7 +20,7 @@ function Bronx() {
     category:'',
     website:'',
     email:'',
-    mutualaid:[],
+    // mutualaid:[],
     id: 0
 },[]);
     const [oneaidData, setOneAidData] = useState([]);
@@ -45,6 +45,7 @@ useEffect(() => {
     console.log('hello')
     axios.get(`${API_URL}mutualaids/boroughs/?borough_id=2`,).then((response) => {
     setMutualAidData(response.data);
+    // setOneAidData(mutualaidData);
     });
 }, []);
 
@@ -77,24 +78,31 @@ const onOneAidSubmit = (newMA) => {
         oneaid.push(response.data);
     console.log("test",oneaid)
     setOneAidData(oneaid);
+    setMutualAidData([...mutualaidData, ...oneaid])
+    console.log("HI",mutualaidData)
+    console.log("YP",oneaid)
     }).catch((error) => {
     console.log('Error: Couldn\'t create new mutualaid', error);
     alert('Couldn\'t create new Mutual aid')
 })
 }
+//add a field for the user 
 // cd
   //deleting aid group 
-
+//
 //   http://127.0.0.1:5000/boroughs/mutualaids?borough_id=1&id=2
 //deleting mutual aid from borough
 const deleteOneAidItem = (oneaid) => {
 console.log("in delete")
 
-    axios.delete(`${API_URL}boroughs/mutualaids/?borough_id=2&${selectedOneAid.id}`).then((response) => {
+    axios.delete(`${API_URL}boroughs/mutualaids/?borough_id=2&id=${oneaid.id}`).then((response) => {
+        
         const newMAData = oneaidData.filter((existingOneAid) => {
-            return existingOneAid.id !== oneaid.id
+            return existingOneAid.id === oneaid.id
         })
-        setOneAidData(newMAData)
+        setMutualAidData(newMAData)
+        console.log("trying delete",newMAData)
+        setOneAidData(oneaid)
     }).catch((error) => {
         console.log('Error: Couldn\'t delete aid', error)
         alert('Couldn\'t delete aid')
@@ -179,7 +187,7 @@ const onMutualAidClick = (mutualaid) => {
                     {mutualaidData.map((mutualaid) => {
         // console.log(mutualaid)
         // console.log(onMutualAidClick)
-        console.log("in here")             
+        // console.log("in here")             
         return(
         <li key={mutualaid.id}> 
         <MutualAid mutualaid={mutualaid} onMutualAidSelect={selectMutualAid} onMutualAidClick = {onMutualAidClick}></MutualAid>

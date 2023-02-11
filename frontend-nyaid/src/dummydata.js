@@ -104,7 +104,7 @@
         //         <li><p className="MA__item__delete" onClick={() => props.deleteOneAidItem(props.oneaid)}>Delete</p></li>
         //     </ul>
         // </div>
-
+// setSelectedOneAid(response.data.oneaidData)
 
 
 

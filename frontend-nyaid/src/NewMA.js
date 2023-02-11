@@ -40,13 +40,13 @@ const NewMA=(props)=>{
         "email":newEmail}
         props.onOneAidSubmit(newMA);
         // setNewBoroughName('')
-        // setNewBorough('')
+        setNewBorough('')
         setNewName('')
         setNewCategory('')
         setNewWebsite('')
         setNewEmail('')
         ;
-    
+    //looking
     }
     return (
         //<div className="new-card">
