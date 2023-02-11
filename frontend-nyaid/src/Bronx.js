@@ -145,7 +145,7 @@ const onMutualAidClick = (mutualaid) => {
         setSelectedOneAid(oneaid)
     };
 
-    // const oneaidElements=oneaidData.map((oneaid)=> {
+    // oneaidData.map((oneaid)=> {
         // console.log(mutualaid)
         // console.log(onMutualAidClick)
     
@@ -165,6 +165,15 @@ const onMutualAidClick = (mutualaid) => {
                     {/* {isMutualAidFormVisible ? <NewMA onMutualAidSubmit={onMutualAidSubmit} ></NewMA> : ""} */}
                 {/* <div onClick={toggleNewMutualAidForm} className="aid__toggle">{isMutualAidFormVisible ? 'Hide New Mutual Aid Form' : 'Show New Mutual Aid Form'}</div> */}
                 </div> 
+                <div>
+                {/* {oneaidData.map((oneaid)=> {
+    
+                return(
+                    <li key={oneaid.id}> 
+                <OneAid oneaid={oneaid} onOneAidSelect={selectOneAid} onOneAidClick = {onOneAidClick}></OneAid>
+                </li>
+                )})} */}
+                </div>
                 <div>
                 <div className='MA__elements'>
                     {mutualaidData.map((mutualaid) => {
