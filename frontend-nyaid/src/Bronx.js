@@ -33,7 +33,6 @@ function Bronx() {
     category:'',
     website:'',
     email:'',
-    oneaid:[],
     id: 0
 },[]);
 
@@ -75,7 +74,8 @@ const onOneAidSubmit = (newMA) => {
     axios.post(`${API_URL}mutualaids/boroughs/?borough_id=2`, newMA).then((response) => {
         console.log('Response:', response.data);
         const oneaid = [...oneaidData];
-    oneaid.push(response.data);
+        oneaid.push(response.data);
+    console.log("test",oneaid)
     setOneAidData(oneaid);
     }).catch((error) => {
     console.log('Error: Couldn\'t create new mutualaid', error);
@@ -145,25 +145,17 @@ const onMutualAidClick = (mutualaid) => {
         setSelectedOneAid(oneaid)
     };
 
-    const oneaidElements=oneaidData.map((oneaid)=> {
+    // const oneaidElements=oneaidData.map((oneaid)=> {
         // console.log(mutualaid)
         // console.log(onMutualAidClick)
     
-    return(
-        <li key={oneaid.id}> 
-        <OneAid oneaid={oneaid} onOneAidSelect={selectOneAid} onOneAidClick = {onOneAidClick}></OneAid>
-        </li>
-    )});
+    // return(
+    //     <li key={oneaid.id}> 
+    //     <OneAid oneaid={oneaid} onOneAidSelect={selectOneAid} onOneAidClick = {onOneAidClick}></OneAid>
+    //     </li>
+    // )});
 
-    const maElements = mutualaidData.map((mutualaid) => {
-        // console.log(mutualaid)
-        // console.log(onMutualAidClick)
     
-    return(
-        <li key={mutualaid.id}> 
-        <MutualAid mutualaid={mutualaid} onMutualAidSelect={selectMutualAid} onMutualAidClick = {onMutualAidClick}></MutualAid>
-        </li>
-    )});
 
     return (
         <div>
@@ -175,7 +167,15 @@ const onMutualAidClick = (mutualaid) => {
                 </div> 
                 <div>
                 <div className='MA__elements'>
-                    {maElements}
+                    {mutualaidData.map((mutualaid) => {
+        // console.log(mutualaid)
+        // console.log(onMutualAidClick)
+        console.log("in here")             
+        return(
+        <li key={mutualaid.id}> 
+        <MutualAid mutualaid={mutualaid} onMutualAidSelect={selectMutualAid} onMutualAidClick = {onMutualAidClick}></MutualAid>
+        </li>
+    )})}
                 </div>
                 <div className="new__BXMutualAid section ">
                     {isOneAidFormVisible ? <NewMA onOneAidSubmit={onOneAidSubmit} ></NewMA> : ""}
@@ -183,7 +183,6 @@ const onMutualAidClick = (mutualaid) => {
                 </div> 
                 <div></div>
                 <div className='OneAid__elements'>
-                    {oneaidElements}
                 </div>
                 <div className="woop__caidd">
             <BoroughsList oneaid={selectedOneAid} oneaidData={oneaidData} deleteOneAidItem={deleteOneAidItem} ></BoroughsList>

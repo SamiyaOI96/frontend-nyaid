@@ -210,5 +210,7 @@ a{
   color: rgb(253, 253, 253);
 
 }
-
+.list__container{
+  text-align: center;
+}
 /* using flexbox to postion things statically NO OLD HACKING butt ummm flexbox solution fixed nav layout that shows what the values */

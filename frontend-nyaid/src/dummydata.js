@@ -94,3 +94,39 @@
 
                 // VisibleForm={isMutualAidFormVisible ? <NewMA onMutualAidSubmit={onMutualAidSubmit} deleteMutualAidItem={deleteMutualAidItem}></NewMA> : ""}
                 // onClick={toggleNewMutualAidForm} className="aid__toggle">{isMutualAidFormVisible ? 'Hide New Mutual Aid Form' : 'Show New Mutual Aid Form'}
+
+
+
+
+        //         <div className="displayAID__item">
+        //     <p className="AID__item__message">{props.oneaid.name} </p>
+        //     <ul>
+        //         <li><p className="MA__item__delete" onClick={() => props.deleteOneAidItem(props.oneaid)}>Delete</p></li>
+        //     </ul>
+        // </div>
+
+
+
+
+        //borooguhslist
+        // /whatever
+    
+        // return (
+        //     <section className='cards__container'>
+        //         <section>
+        //             {oneaidElements}
+        //             {/* <h2>Recently added Mutual Aid : {props.oneaidData.name} </h2>
+        //             <div className='single-items__container'>
+        
+        //             <div>Name:{props.oneaid.name}</div>
+                    
+        
+        //             <div>Category:{props.oneaid.category}</div>
+        
+        //             <div>Website:{props.oneaid.website}</div>
+        
+        //             <div>Email:{props.oneaid.email}</div>
+        //             //  */}
+                
+        //         </section>
+        //     </section>
