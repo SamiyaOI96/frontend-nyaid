@@ -1,10 +1,22 @@
 
-nav{
+/* nav{
   display: flex;
   justify-content: space-around;
   align-items: center;
-  min-height: 10vh;
-  color:white;
+  position:sticky;
+  /* min-height: 20vh; */
+  /* color:white;
+  top: 0;
+  z-index: 100; */
+/* } */ 
+.nav__links
+{
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(170, 46, 131);
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 ul {
   list-style-type: none;

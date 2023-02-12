@@ -6,7 +6,7 @@ const MutualAid = (props) => {
     return (
         <div className="mutualAidList__css" >
         {/* <div>Borough:{props.mutualaid.borough_name}</div> */}
-        {/* <li><p className="card__item__delete" onClick={() => props.deleteOneAidItem(props.oneaid)}>Delete</p></li> */}
+        <li><p className="aid__click" onClick={() => props.onMutualAidClick (props.mutualaid)}>click</p></li>
         
         <div>Name:{props.mutualaid.name}
         

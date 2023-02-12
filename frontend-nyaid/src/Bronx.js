@@ -10,7 +10,8 @@ import BoroughsList from "./BoroughsList";
 const API_URL = "http://localhost:5000/";
 
 function Bronx() {
-    const [mutualaidData, setMutualAidData] = useState([]);
+    const [ mutualaidData,setMutualAidData] = useState([]);
+    
     
     
     const [selectedMutualAid, setSelectedMutualAid] = useState({
@@ -39,37 +40,50 @@ function Bronx() {
 
   //getting all of the mutual aid 
 
-
+//   console.log('Response:', response.data);
+//   const mutualaid = [...mutualaidData];
+// mutualaid.push(response.data);
+// fetch(`${API_URL}mutualaids/boroughs/?borough_id=2`)
+// // .then((response) => {
+// //     return response.json();
+// //   })
+// .then((response) => {
+//        mutualaidData(response.data);
+//     })
 
 useEffect(() => {
     console.log('hello')
     axios.get(`${API_URL}mutualaids/boroughs/?borough_id=2`,).then((response) => {
-    setMutualAidData(response.data);
-    // setOneAidData(mutualaidData);
+    setMutualAidData(response.data)
+    // mutualaidData(response.data)
+    
     });
+    
 }, []);
+
+console.log("mutualaid",mutualaidData)
 
 useEffect(()=>{
     console.log('broooo')
     axios.get(`${API_URL}boroughs/mutualaids/?borough_id=2`).then((response) => {
     setOneAidData(response.data);
+    
     });
 }, []);
+const onMutualAidSubmit = (newMA) => {
+    console.log(newMA)
+    axios.post(`${API_URL}mutualaids/boroughs/?borough_id=2`, newMA).then((response) => {
+        console.log('Response:', response.data);
+        const mutualaid = [...mutualaidData];
+    mutualaid.push(response.data);
+    setMutualAidData(mutualaid);
+    }).catch((error) => {
+    console.log('Error: Couldn\'t create new mutualaid', error);
+    alert('Couldn\'t create new Mutual aid')
+})
+}
 
 
-
-// const onMutualAidSubmit = (newMA) => {
-//     console.log(newMA)
-//     axios.post(`${API_URL}mutualaids/boroughs/?borough_id=2`, newMA).then((response) => {
-//         console.log('Response:', response.data);
-//         const mutualaid = [...mutualaidData];
-//     mutualaid.push(response.data);
-//     setMutualAidData(mutualaid);
-//     }).catch((error) => {
-//     console.log('Error: Couldn\'t create new mutualaid', error);
-//     alert('Couldn\'t create new Mutual aid')
-// })
-// }
 const onOneAidSubmit = (newMA) => {
     console.log(newMA)
     axios.post(`${API_URL}mutualaids/boroughs/?borough_id=2`, newMA).then((response) => {
@@ -86,50 +100,50 @@ const onOneAidSubmit = (newMA) => {
     alert('Couldn\'t create new Mutual aid')
 })
 }
-//add a field for the user 
-// cd
-  //deleting aid group 
-//
-//   http://127.0.0.1:5000/boroughs/mutualaids?borough_id=1&id=2
-//deleting mutual aid from borough
+
+
 const deleteOneAidItem = (oneaid) => {
 console.log("in delete")
 
     axios.delete(`${API_URL}boroughs/mutualaids/?borough_id=2&id=${oneaid.id}`).then((response) => {
-        
-        const newMAData = oneaidData.filter((existingOneAid) => {
-            return existingOneAid.id === oneaid.id
+        console.log(mutualaidData);
+        const newMAData = mutualaidData.filter((existingOneAid) => {
+            return existingOneAid.id !== oneaid.id
         })
-        setMutualAidData(newMAData)
+        // setMutualAidData(newMAData)
+        //javascript error
+        // console.log("mutualaiddata",mutualaidData)
+        // take existing mutual aid state value
+        // find item that matches the item that was deleted and remove it from that array
+        // set state value with the updated list
+        setMutualAidData([...newMAData])
+        console.log("mutualaiddata",mutualaidData)
         console.log("trying delete",newMAData)
-        setOneAidData(oneaid)
+        // console.log("mutualaiddata",mutualaidData)
+        // setOneAidData(oneaid)
     }).catch((error) => {
         console.log('Error: Couldn\'t delete aid', error)
         alert('Couldn\'t delete aid')
     })
 }
 
-  //getting all of the mutual aid
 
-  // getting all of the mutual ai
-  //http://127.0.0.1:5000/boroughs/mutualaids?borough_id=1&id=2
 
 const onMutualAidClick = (mutualaid) => {
     console.log(onMutualAidClick)
 
-    axios.get(`${API_URL}mutualaids/boroughs/?borough_id=2/${mutualaid.id}`).then((response) => {
-        setSelectedMutualAid(response.data);
-        setMutualAidData(response.data.mutualaid);
+    axios.get(`${API_URL}boroughs/mutualaids/?borough_id=2&${mutualaid.id}`).then((response) => {
+        setMutualAidData([...mutualaidData]);
     }).catch((error) => {
         console.log('Error: Couldn\'t get all aid', error)
         alert('Couldn\'t get all aid')
     });
     };
     const onOneAidClick = (oneaid) => {
-        console.log(onOneAidClick)
-        axios.get(`${API_URL}boroughs/mutualaids/?borough_id=2&${oneaid.id}`).then((response) => {
-            setSelectedOneAid(response.data);
-            setOneAidData(response.data.oneaid);
+        console.log("clicking",onOneAidClick)
+        axios.get(`${API_URL}boroughs/mutualaids/?borough_id=2&${oneaidData.id}`).then((response) => {
+        setOneAidData(oneaid);
+        // setMutualAidData([...mutualaidData, ...oneaid])
         }).catch((error) => {
             console.log('Error: Couldn\'t get all aid', error)
             alert('Couldn\'t get all aid')
@@ -138,11 +152,7 @@ const onMutualAidClick = (mutualaid) => {
     // boroughs/mutualaids/?borough_id=5&id=45
     const [isOneAidFormVisible, setIsOneAidFormVisible] = useState(true);
     
-    // const [isMutualAidFormVisible, setIsMutualAidFormVisible] = useState(true);
-    
-    // const toggleNewMutualAidForm = () => {
-    // setIsMutualAidFormVisible(!isMutualAidFormVisible)
-    // };
+
     const toggleAidForm = () => {
         setIsOneAidFormVisible(!isOneAidFormVisible)
     }
@@ -153,15 +163,7 @@ const onMutualAidClick = (mutualaid) => {
         setSelectedOneAid(oneaid)
     };
 
-    // oneaidData.map((oneaid)=> {
-        // console.log(mutualaid)
-        // console.log(onMutualAidClick)
     
-    // return(
-    //     <li key={oneaid.id}> 
-    //     <OneAid oneaid={oneaid} onOneAidSelect={selectOneAid} onOneAidClick = {onOneAidClick}></OneAid>
-    //     </li>
-    // )});
 
     
 
@@ -174,13 +176,7 @@ const onMutualAidClick = (mutualaid) => {
                 {/* <div onClick={toggleNewMutualAidForm} className="aid__toggle">{isMutualAidFormVisible ? 'Hide New Mutual Aid Form' : 'Show New Mutual Aid Form'}</div> */}
                 </div> 
                 <div>
-                {/* {oneaidData.map((oneaid)=> {
-    
-                return(
-                    <li key={oneaid.id}> 
-                <OneAid oneaid={oneaid} onOneAidSelect={selectOneAid} onOneAidClick = {onOneAidClick}></OneAid>
-                </li>
-                )})} */}
+                
                 </div>
                 <div>
                 <div className='MA__elements'>
@@ -194,6 +190,13 @@ const onMutualAidClick = (mutualaid) => {
         </li>
     )})}
                 </div>
+                {/* {oneaidData.map((oneaid)=> {
+    
+    return(
+        <li key={oneaid.id}> 
+    <OneAid oneaid={oneaid} onOneAidSelect={selectOneAid} onOneAidClick = {onOneAidClick}></OneAid>
+    </li>
+    )})} */}
                 <div className="new__BXMutualAid section ">
                     {isOneAidFormVisible ? <NewMA onOneAidSubmit={onOneAidSubmit} ></NewMA> : ""}
                 <div onClick={toggleAidForm} className="aid__toggle">{isOneAidFormVisible ? 'Hide New Mutual Aid Form' : 'Display New Mutual Aid Form'}</div>
