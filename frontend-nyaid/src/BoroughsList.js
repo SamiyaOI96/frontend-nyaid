@@ -17,31 +17,21 @@ const BoroughsList=(props)=>{
 
                 //passing it as a prop to card
             ></OneAid>)
+            
         })
-
+        console.log("checking info",OneAid)
 //
     
     
         return (
             <section className='list__container'>
                 <section>
-                    <h2>Recently added Mutual Aid : {props.oneaidData.name} </h2>
-                    
+                    <h2>New Mutual Aid :  </h2>
+                    {/* {props.oneaidData.name} */}
+                    {/* <div> {oneaidElements}</div> */}
                     <div> {oneaidElements}</div>
 
-                    
-                    {/* <div className='single-items__container'>
-        
-                    <div>Name:{props.oneaid.name}</div>
-                    
-        
-                    <div>Category:{props.oneaid.category}</div>
-        
-                    <div>Website:{props.oneaid.website}</div>
-        
-                    <div>Email:{props.oneaid.email}</div>
-                    
-                    </div> */}
+            
                 </section>
             </section>
             
@@ -51,5 +41,4 @@ const BoroughsList=(props)=>{
 
 };
 
-// export default CardList;
 export default BoroughsList;

@@ -120,7 +120,7 @@ console.log("in delete")
         console.log("mutualaiddata",mutualaidData)
         console.log("trying delete",newMAData)
         // console.log("mutualaiddata",mutualaidData)
-        // setOneAidData(oneaid)
+        setOneAidData([])
     }).catch((error) => {
         console.log('Error: Couldn\'t delete aid', error)
         alert('Couldn\'t delete aid')
@@ -181,7 +181,7 @@ const onMutualAidClick = (mutualaid) => {
                 <div>
                 <div className='MA__elements'>
                     {mutualaidData.map((mutualaid) => {
-        // console.log(mutualaid)
+        console.log("checking items",mutualaid)
         // console.log(onMutualAidClick)
         // console.log("in here")             
         return(

@@ -6,17 +6,26 @@ const MutualAid = (props) => {
     return (
         <div className="mutualAidList__css" >
         {/* <div>Borough:{props.mutualaid.borough_name}</div> */}
-        <li><p className="aid__click" onClick={() => props.onMutualAidClick (props.mutualaid)}>click</p></li>
+        <p className="aid__click" onClick={() => props.onMutualAidClick (props.mutualaid)}></p>
         
-        <div>Name:{props.mutualaid.name}
+        <div className="MA_NAME">
+        <div>Name:{props.mutualaid.name}</div>
+        </div>
         
-        {/* <div>Category:{props.mutualaid.category}</div>
+        <div className="MA_CATEGORY">
+        <div>Category:{props.mutualaid.category}</div>
+        </div>
         
+        <div className="MA__WEB">
         <div>Website:{props.mutualaid.website}</div>
+        </div>
         
-        <div>Email:{props.mutualaid.email}</div> */}
+        
+        <div className="MA_EMAIL">
+        <div>Email:{props.mutualaid.email}</div>
         </div>
         </div>
+        
     );
 };
 
