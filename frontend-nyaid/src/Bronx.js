@@ -28,7 +28,6 @@ function Bronx() {
     
     
     const [selectedOneAid, setSelectedOneAid] = useState({
-    // borough_name:'',
     borough: '',
     name: '',
     category:'',
@@ -38,18 +37,6 @@ function Bronx() {
 },[]);
 
 
-  //getting all of the mutual aid 
-
-//   console.log('Response:', response.data);
-//   const mutualaid = [...mutualaidData];
-// mutualaid.push(response.data);
-// fetch(`${API_URL}mutualaids/boroughs/?borough_id=2`)
-// // .then((response) => {
-// //     return response.json();
-// //   })
-// .then((response) => {
-//        mutualaidData(response.data);
-//     })
 
 useEffect(() => {
     console.log('hello')
@@ -110,16 +97,8 @@ console.log("in delete")
         const newMAData = mutualaidData.filter((existingOneAid) => {
             return existingOneAid.id !== oneaid.id
         })
-        // setMutualAidData(newMAData)
-        //javascript error
-        // console.log("mutualaiddata",mutualaidData)
-        // take existing mutual aid state value
-        // find item that matches the item that was deleted and remove it from that array
-        // set state value with the updated list
+        
         setMutualAidData([...newMAData])
-        console.log("mutualaiddata",mutualaidData)
-        console.log("trying delete",newMAData)
-        // console.log("mutualaiddata",mutualaidData)
         setOneAidData([])
     }).catch((error) => {
         console.log('Error: Couldn\'t delete aid', error)
@@ -181,22 +160,14 @@ const onMutualAidClick = (mutualaid) => {
                 <div>
                 <div className='MA__elements'>
                     {mutualaidData.map((mutualaid) => {
-        console.log("checking items",mutualaid)
-        // console.log(onMutualAidClick)
-        // console.log("in here")             
+                    
         return(
         <li key={mutualaid.id}> 
         <MutualAid mutualaid={mutualaid} onMutualAidSelect={selectMutualAid} onMutualAidClick = {onMutualAidClick}></MutualAid>
         </li>
-    )})}
+        )})}
                 </div>
-                {/* {oneaidData.map((oneaid)=> {
-    
-    return(
-        <li key={oneaid.id}> 
-    <OneAid oneaid={oneaid} onOneAidSelect={selectOneAid} onOneAidClick = {onOneAidClick}></OneAid>
-    </li>
-    )})} */}
+
                 <div className="new__BXMutualAid section ">
                     {isOneAidFormVisible ? <NewMA onOneAidSubmit={onOneAidSubmit} ></NewMA> : ""}
                 <div onClick={toggleAidForm} className="aid__toggle">{isOneAidFormVisible ? 'Hide New Mutual Aid Form' : 'Display New Mutual Aid Form'}</div>

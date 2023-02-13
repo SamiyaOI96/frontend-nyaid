@@ -8,6 +8,7 @@ const MutualAid = (props) => {
         {/* <div>Borough:{props.mutualaid.borough_name}</div> */}
         <p className="aid__click" onClick={() => props.onMutualAidClick (props.mutualaid)}></p>
         
+        
         <div className="MA_NAME">
         <div>Name:{props.mutualaid.name}</div>
         </div>
@@ -17,12 +18,14 @@ const MutualAid = (props) => {
         </div>
         
         <div className="MA__WEB">
-        <div>Website:{props.mutualaid.website}</div>
+        <div>Website:<a href={props.mutualaid.website}>.{props.mutualaid.website}</a></div>
         </div>
         
         
         <div className="MA_EMAIL">
         <div>Email:{props.mutualaid.email}</div>
+
+        
         </div>
         </div>
         

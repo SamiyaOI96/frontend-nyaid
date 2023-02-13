@@ -4,53 +4,61 @@ import NewMA from './NewMA';
 import MutualAid from './MutualAid';
 import axios from 'axios';
 import {useState,useEffect } from 'react';
+import BoroughsList from './BoroughsList';
 
 const API_URL = "http://localhost:5000/";
 
 function Queens() {
-    const [mutualaidData, setMutualAidData] = useState([]);
-
-
+    const [ mutualaidData,setMutualAidData] = useState([]);
+    
+    
+    
     const [selectedMutualAid, setSelectedMutualAid] = useState({
+    // borough_name:'',
     borough: '',
     name: '',
     category:'',
     website:'',
     email:'',
-    mutualaid:[],
+    // mutualaid:[],
+    id: 0
+},[]);
+    const [oneaidData, setOneAidData] = useState([]);
+    
+    
+    const [selectedOneAid, setSelectedOneAid] = useState({
+    borough: '',
+    name: '',
+    category:'',
+    website:'',
+    email:'',
     id: 0
 },[]);
 
 
 
-  //getting all of the mutual aid 
-
-
-
 useEffect(() => {
     console.log('hello')
-    axios.get(`${API_URL}/mutualaids/boroughs/?borough_id=4`,).then((response) => {
-    setMutualAidData(response.data);
+    axios.get(`${API_URL}mutualaids/boroughs/?borough_id=4`,).then((response) => {
+    setMutualAidData(response.data)
+    // mutualaidData(response.data)
+    
+    });
+    
+}, []);
+
+console.log("mutualaid",mutualaidData)
+
+useEffect(()=>{
+    console.log('broooo')
+    axios.get(`${API_URL}boroughs/mutualaids/?borough_id=4`).then((response) => {
+    setOneAidData(response.data);
+    
     });
 }, []);
-// ${selectedMutualAid.id}
-
-// /mutualaids/boroughs/?borough_id=1
-// const onBoardSubmit = (newBoard) => {
-//     console.log(newBoard)
-//     axios.post(`${url}/boards`, newBoard).then((response) => {
-//       console.log('Response:', response.data);
-//       const boards = [...boardsData];
-//       boards.push(response.data);
-//       setBoardsData(boards);
-//     }).catch((error) => {
-//       console.log('Error: Couldn\'t create new board', error);
-//       alert('Couldn\'t create new board')
-//     })
-//   }
 const onMutualAidSubmit = (newMA) => {
     console.log(newMA)
-    axios.post(`${API_URL}/mutualaids/boroughs/?borough_id=4`, newMA).then((response) => {
+    axios.post(`${API_URL}mutualaids/boroughs/?borough_id=4`, newMA).then((response) => {
         console.log('Response:', response.data);
         const mutualaid = [...mutualaidData];
     mutualaid.push(response.data);
@@ -61,78 +69,114 @@ const onMutualAidSubmit = (newMA) => {
 })
 }
 
-useEffect (() => {
-    if  (!selectedMutualAid.id) {
-        return;
-    }
-    axios.get(`${API_URL}/boroughs/mutualaids?${selectedMutualAid.id}/?borough_id=4`).then((response) => {
-        setMutualAidData(response.data.mutualaid);
-    }).catch((error) => {
-        console.log('Error: Couldn\'t get all mutualaid', error)
-        alert('Couldn\'t get all mutualaid')
-    });
-}, [selectedMutualAid.id]);
-  //deleting aid group 
 
-//   http://127.0.0.1:5000/boroughs/mutualaids?borough_id=1&id=2
-//deleting mutual aid from borough
-const deleteMutualAidItem = (mutualaid) => {
+const onOneAidSubmit = (newMA) => {
+    console.log(newMA)
+    axios.post(`${API_URL}mutualaids/boroughs/?borough_id=4`, newMA).then((response) => {
+        console.log('Response:', response.data);
+        const oneaid = [...oneaidData];
+        oneaid.push(response.data);
+    console.log("test",oneaid)
+    setOneAidData(oneaid);
+    setMutualAidData([...mutualaidData, ...oneaid])
+    console.log("HI",mutualaidData)
+    console.log("YP",oneaid)
+    }).catch((error) => {
+    console.log('Error: Couldn\'t create new mutualaid', error);
+    alert('Couldn\'t create new Mutual aid')
+})
+}
+
+
+const deleteOneAidItem = (oneaid) => {
 console.log("in delete")
-    axios.delete(`${API_URL}/mutualaids/boroughs/?borough_id=4${selectedMutualAid.id}`).then((response) => {
-        const newMAData = mutualaidData.filter((existingMutualAid) => {
-            return existingMutualAid.id !== mutualaid.id
+
+    axios.delete(`${API_URL}boroughs/mutualaids/?borough_id=4&id=${oneaid.id}`).then((response) => {
+        console.log(mutualaidData);
+        const newMAData = mutualaidData.filter((existingOneAid) => {
+            return existingOneAid.id !== oneaid.id
         })
-        setMutualAidData(newMAData)
+        
+        setMutualAidData([...newMAData])
+        setOneAidData([])
     }).catch((error) => {
         console.log('Error: Couldn\'t delete aid', error)
         alert('Couldn\'t delete aid')
     })
 }
 
-  //getting all of the mutual aid
 
-  // getting all of the mutual ai
-  //http://127.0.0.1:5000/boroughs/mutualaids?borough_id=1&id=2
 
 const onMutualAidClick = (mutualaid) => {
     console.log(onMutualAidClick)
-    axios.get(`${API_URL}/mutualaids/boroughs/?borough_id=4/${mutualaid.id}`).then((response) => {
-        setSelectedMutualAid(response.data);
-        setMutualAidData(response.data.mutualaid);
+
+    axios.get(`${API_URL}boroughs/mutualaids/?borough_id=4&${mutualaid.id}`).then((response) => {
+        setMutualAidData([...mutualaidData]);
     }).catch((error) => {
         console.log('Error: Couldn\'t get all aid', error)
         alert('Couldn\'t get all aid')
     });
     };
+    const onOneAidClick = (oneaid) => {
+        console.log("clicking",onOneAidClick)
+        axios.get(`${API_URL}boroughs/mutualaids/?borough_id=4&${oneaidData.id}`).then((response) => {
+        setOneAidData(oneaid);
+        // setMutualAidData([...mutualaidData, ...oneaid])
+        }).catch((error) => {
+            console.log('Error: Couldn\'t get all aid', error)
+            alert('Couldn\'t get all aid')
+        });
+        };
+    // boroughs/mutualaids/?borough_id=5&id=45
+    const [isOneAidFormVisible, setIsOneAidFormVisible] = useState(true);
+    
 
-
-    const [isMutualAidFormVisible, setIsMutualAidFormVisible] = useState(true);
-    const toggleNewMutualAidForm = () => {
-    setIsMutualAidFormVisible(!isMutualAidFormVisible)
-    };
+    const toggleAidForm = () => {
+        setIsOneAidFormVisible(!isOneAidFormVisible)
+    }
     const selectMutualAid = (mutualaid) => {
         setSelectedMutualAid(mutualaid)
     };
-    const maElements = mutualaidData.map((mutualaid) => {
-        // console.log(mutualaid)
-        // console.log(onMutualAidClick)
-    return(
+    const selectOneAid = (oneaid) => {
+        setSelectedOneAid(oneaid)
+    };
+
+    
+
+    
+
+    return (
+        <div>
+            <div className='bronx__Css'>
+            <h4>Queens Mutual Aid</h4>
+                <div className="new__BXMutualAid section ">
+                    {/* {isMutualAidFormVisible ? <NewMA onMutualAidSubmit={onMutualAidSubmit} ></NewMA> : ""} */}
+                {/* <div onClick={toggleNewMutualAidForm} className="aid__toggle">{isMutualAidFormVisible ? 'Hide New Mutual Aid Form' : 'Show New Mutual Aid Form'}</div> */}
+                </div> 
+                <div>
+                
+                </div>
+                <div>
+                <div className='MA__elements'>
+                    {mutualaidData.map((mutualaid) => {
+                    
+        return(
         <li key={mutualaid.id}> 
         <MutualAid mutualaid={mutualaid} onMutualAidSelect={selectMutualAid} onMutualAidClick = {onMutualAidClick}></MutualAid>
         </li>
-    )});
-    return (
-        <div>
-            <div className='queens__Css'>
-            <h4>Queens Mutual Aid</h4>
-                <div className="new__QSMutualAid section ">
-                    {isMutualAidFormVisible ? <NewMA onMutualAidSubmit={onMutualAidSubmit} deleteMutualAidItem={deleteMutualAidItem}></NewMA> : ""}
-                <div onClick={toggleNewMutualAidForm} className="aid__toggle">{isMutualAidFormVisible ? 'Hide New Mutual Aid Form' : 'Show New Mutual Aid Form'}</div>
-                </div> 
-                <div>
-                <div className='MA__elements'>
-                    {maElements}
+        )})}
                 </div>
+
+                <div className="new__BXMutualAid section ">
+                    {isOneAidFormVisible ? <NewMA onOneAidSubmit={onOneAidSubmit} ></NewMA> : ""}
+                <div onClick={toggleAidForm} className="aid__toggle">{isOneAidFormVisible ? 'Hide New Mutual Aid Form' : 'Display New Mutual Aid Form'}</div>
+                </div> 
+                <div></div>
+                <div className='OneAid__elements'>
+                </div>
+                <div className="woop__caidd">
+            <BoroughsList oneaid={selectedOneAid} oneaidData={oneaidData} deleteOneAidItem={deleteOneAidItem} ></BoroughsList>
+            </div>
                 </div> 
                 </div>
         </div>
