@@ -18,7 +18,7 @@ const OneAid = (props) => {
                 
             
             <ul>
-                <li><p className="MA__item__delete" onClick={() => props.deleteOneAidItem(props.oneaid)}>Delete</p></li>
+                <li><p className="MA__item__delete" onClick={() => props.deleteOneAidItem(props.oneaid)}><div className="delete__butt"><button type="button">Delete</button></div></p></li>
             </ul>
             </div>
         </div>

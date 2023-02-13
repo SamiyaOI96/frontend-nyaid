@@ -26,10 +26,10 @@ const BoroughsList=(props)=>{
         return (
             <section className='list__container'>
                 <section>
-                    <h2>New Mutual Aid : </h2>
+                    <h2>New Mutual Aid <div> {oneaidElements}</div></h2>
                     {/* {props.oneaidData.name} */}
                     {/* <div> {oneaidElements}</div> */}
-                    <div> {oneaidElements}</div>
+                    {/* <div> {oneaidElements}</div> */}
 
             
                 </section>

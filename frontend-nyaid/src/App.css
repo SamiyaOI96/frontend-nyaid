@@ -1,34 +1,33 @@
 
-/* nav{
-  display: flex;
+nav{
+  display: block;
   justify-content: space-around;
   align-items: center;
   position:sticky;
-  /* min-height: 20vh; */
-  /* color:white;
+  min-height: 16vh; 
+  min-width:24vh;
+  color:white;
   top: 0;
-  z-index: 100; */
-/* } */ 
-.nav__links
-{
-  display: flex;
-  justify-content: space-between;
-  background-color: rgb(170, 46, 131);
+  z-index: 100; 
   position: sticky;
-  top: 0;
-  z-index: 100;
+} 
+ .new__linky
+{
+  max-height:6vh;
 }
-ul {
+
+
+/* ul {
   list-style-type: none;
   display: flex;
   justify-content: space-around;
   align-items: center;
   color:white;
   /* position: sticky; */
-  top: 0;
+  /* top: 0;
   z-index: 100;
 
-}
+} */ 
 h3{font-family: 'Courier New',monospace;
   font-size: x-large;
   text-shadow: 2px 2px #585757;
@@ -50,15 +49,14 @@ li{
   font-size: x-large;
   text-shadow: 2px 2px #585757;
   font-weight: bold;
-  /* position: sticky; */
-  top: 0;
-  z-index: 100;
+  list-style-type: none;
 
 
-}
+
+} 
 
 .MA__item__delete{
-  font-size: small ;
+  font-size: small;
 }
 h1{text-align: center;
   font-size: xx-large;
@@ -81,8 +79,8 @@ font-family: 'Courier New',monospace;
 font-size: large;
 text-shadow: 2px 2px #8c8989;
 font-weight: bold;
-display:flex;
-flex-direction: column;
+display:inline;
+/* flex-direction: column; */
 font-size: larger;
 }
 .newMA__form{
@@ -90,11 +88,9 @@ text-shadow: 2px 2px #8c8989;
 font-weight: bold;
 font-size: larger;
 min-width: 24vh;
-min-height:35vh;
-display: block;
-flex: 0 1 auto;
-align-items: center;
-position:fixed; left:50px;bottom:.5px;
+min-height:25vh;
+display: inline;
+/* flex-direction:column */
 
 }
 .newMA__buttons{
@@ -107,7 +103,7 @@ position:fixed; left:50px;bottom:.5px;
 }
 
 .displaying_Aid{
-  font-size:small;
+  font-size:x-small;
   display:flex;
   flex-direction: column;
   border: 1.5px solid rgb(35, 7, 251); 
@@ -158,7 +154,7 @@ body {
 .nav__links
 {
   color:white;
-  min-height: 18vh;
+  min-height: 25vh;
 
 } 
 
@@ -168,13 +164,13 @@ h4{
   font-family: 'Courier New',monospace;
   text-shadow: 2px 2px #8c8989;
   font-weight: bolder;
-  min-height: 2vh;
+  min-height: 10vh;
 }
 .MA__elements{
 overflow: scroll;
 display:flex;
 flex-direction: column;
-min-height: 10vh;
+min-height: 4vh;
 min-width: 22vh;
 border: 1.5px solid rgb(251, 7, 194); 
 margin: .5rem;
@@ -186,11 +182,11 @@ justify-content: space-around;
 
 }
 form{
-  display: flex;
+  display: inline;
   justify-content: space-around;
   list-style-type: none;
   word-break: break-all;
-  justify-content: space-around;
+  
 }
 /* display=none changing the css in the app */
 
@@ -201,14 +197,13 @@ form{
   list-style-type: none;
   word-break: break-all;
   justify-content: space-around;
-  min-width:90%;
-  max-height: 3vh;
+  min-width:100%;
+  max-height: 2vh;
   border: 2px;
   display: grid;
-  grid-template-columns: 20% 20% 20% 20% 20%;
-  grid-template-rows: 20% 20% 20% 20% 20%;
-  grid-gap: 20px;
-  position: sticky;
+  grid-template-columns: 33% 33% 33%;
+  grid-template-rows:  60% 20% 20% ;
+  grid-gap: 8px;
   /* width: 100%; */
   /* height: 100vh; */
   top: 0;
@@ -234,7 +229,7 @@ form{
   justify-content: space-between;
 } */
 .Boxes__aid{
-  display:block;
+  display:inline-flex;
   max-height:14vh;
 }
 .land__ACK{
@@ -269,5 +264,39 @@ a{
 }
 .list__container{
   text-align: center;
+}
+.delete__butt,button{
+  position: relative;
+  background-color: #f60090;
+  border: none;
+  font-size: 20px;
+  color: #FFFFFF;
+  padding: 20px;
+  width: 200px;
+  text-align: center;
+  transition-duration: 0.4s;
+  text-decoration: none;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.delete__butt,button:after {
+  content: "";
+  background: #f1f1f1;
+  display: block;
+  position: absolute;
+  padding-top: 300%;
+  padding-left: 350%;
+  margin-left: -20px !important;
+  margin-top: -120%;
+  opacity: 0;
+  transition: all 0.8s
+}
+
+.delete__butt,button:active:after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s
 }
 /* using flexbox to postion things statically NO OLD HACKING butt ummm flexbox solution fixed nav layout that shows what the values */

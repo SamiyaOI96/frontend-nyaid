@@ -16,6 +16,7 @@ function Nav() {
     <nav>
         <div className="nav__links">
         <ul>
+            <div className='new__linky'>
                 <Link style={navStyle} to='/'>
                     <li>DashBoard</li>
                 </Link>
@@ -39,6 +40,7 @@ function Nav() {
                 <Link style={navStyle} to='/statenisland'>
                     <li>Staten Island</li>
                 </Link>
+                </div>
         </ul>
         </div>
     </nav>

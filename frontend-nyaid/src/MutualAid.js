@@ -21,12 +21,12 @@ const MutualAid = (props) => {
         <div>Website:<a href={props.mutualaid.website}>.{props.mutualaid.website}</a></div>
         </div>
         
-        
+{/*         
         <div className="MA_EMAIL">
-        <div>Email:{props.mutualaid.email}</div>
+        <div>Email:{props.mutualaid.email}</div> */}
 
         
-        </div>
+        {/* </div> */}
         </div>
         
     );
