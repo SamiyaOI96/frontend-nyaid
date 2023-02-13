@@ -19,7 +19,9 @@ const MutualAid = (props) => {
         
         <div className="MA__WEB">
         <div>Website:<a href={props.mutualaid.website}>.{props.mutualaid.website}</a></div>
+        
         </div>
+
         
 {/*         
         <div className="MA_EMAIL">

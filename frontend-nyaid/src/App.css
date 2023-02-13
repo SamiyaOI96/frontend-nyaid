@@ -1,19 +1,23 @@
 
 nav{
-  display: block;
+  display: flex;
+  flex-direction: row;
   justify-content: space-around;
   align-items: center;
   position:sticky;
-  min-height: 16vh; 
+  min-height: 20vh; 
   min-width:24vh;
   color:white;
   top: 0;
   z-index: 100; 
   position: sticky;
+  
 } 
  .new__linky
 {
-  max-height:6vh;
+  max-height:3vh;
+  display: flex;
+  flex-direction: row;
 }
 
 
@@ -65,6 +69,10 @@ h1{text-align: center;
   font-weight: bolder;
 
 }
+ul{
+  align-items: center;
+  min-width: 32vh
+}
 
 h2{
   text-align: center;
@@ -72,7 +80,8 @@ h2{
   font-family: 'Courier New',monospace;
   text-shadow: 2px 2px #8c8989;
   font-weight: bolder;
-  min-height: 18vh;
+  min-height: 8vh;
+  position: sticky;
 }
 .new__MA__section{
 font-family: 'Courier New',monospace;
@@ -87,9 +96,10 @@ font-size: larger;
 text-shadow: 2px 2px #8c8989;
 font-weight: bold;
 font-size: larger;
-min-width: 24vh;
+min-width: 38vh;
 min-height:25vh;
 display: inline;
+align-content: center;
 /* flex-direction:column */
 
 }
@@ -108,13 +118,30 @@ display: inline;
   flex-direction: column;
   border: 1.5px solid rgb(35, 7, 251); 
   margin: .5rem;
+  max-height: 20vh;
+  max-width: 120vh;
+}
+section{
+  min-height: 13vh;
+  font-size: small;
+}
+.list__container{
+  min-height: 10vh;
 }
 
 input{
   background-color: #e5d2e3;
   display:flex;
-flex-direction: column;
+  flex-direction: column;
+  align-content: center;
+
 }
+.req {
+  color: red;
+  font-size: small;
+  
+}
+
 
 body{
   background: #fff;
@@ -154,24 +181,37 @@ body {
 .nav__links
 {
   color:white;
-  min-height: 25vh;
+  min-height: 38vh;
+  max-width: 400vh;
 
 } 
 
 h4{
   text-align: center;
+  background-color: transparent;
   font-size: xx-large;
   font-family: 'Courier New',monospace;
   text-shadow: 2px 2px #8c8989;
   font-weight: bolder;
-  min-height: 10vh;
+  min-height: 8vh;
+  position: sticky;
+}
+.flower__png{
+  background-image:url(file:///Users/samiyaismail/Downloads/PNG%20flower.svg);
+  background-size: 140px;
+  width: 840px;
+  height: 140px;
+  display: grid;
+  place-items: center;
 }
 .MA__elements{
 overflow: scroll;
 display:flex;
 flex-direction: column;
-min-height: 4vh;
-min-width: 22vh;
+min-height: 6vh;
+min-width: 20vh;
+border-radius: 10px;
+border-style: double;
 border: 1.5px solid rgb(251, 7, 194); 
 margin: .5rem;
 font-style: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
@@ -197,13 +237,13 @@ form{
   list-style-type: none;
   word-break: break-all;
   justify-content: space-around;
-  min-width:100%;
-  max-height: 2vh;
+  min-width:18vh;
+  max-height: 3vh;
   border: 2px;
   display: grid;
   grid-template-columns: 33% 33% 33%;
-  grid-template-rows:  60% 20% 20% ;
-  grid-gap: 8px;
+  grid-template-rows:  60% 28% 12% ;
+  grid-gap: 12px;
   /* width: 100%; */
   /* height: 100vh; */
   top: 0;
@@ -230,7 +270,8 @@ form{
 } */
 .Boxes__aid{
   display:inline-flex;
-  max-height:14vh;
+  max-height:10vh;
+  align-content: center;
 }
 .land__ACK{
   font-family: 'Courier New',monospace;
@@ -260,6 +301,8 @@ form{
 }
 a{
   color: rgb(253, 253, 253);
+  scroll-behavior: auto;
+  top: 0px;
 
 }
 .list__container{
@@ -292,11 +335,23 @@ a{
   opacity: 0;
   transition: all 0.8s
 }
-
+.bronx__Css{
+  max-width: 700vh;
+  max-height:1000vh;
+  align-content: center;
+}
 .delete__butt,button:active:after {
   padding: 0;
   margin: 0;
   opacity: 1;
   transition: 0s
+}
+.aid__toggle{
+  font-size: medium;
+  position:absolute;
+}
+.req__css{
+  font-size: smaller;
+
 }
 /* using flexbox to postion things statically NO OLD HACKING butt ummm flexbox solution fixed nav layout that shows what the values */

@@ -13,13 +13,10 @@ const OneAid = (props) => {
                 <li>Website:<a href={props.oneaid.website}>.{props.oneaid.website}</a> </li>
                 <li>Email:{props.oneaid.email} </li>
                 </div>
-
             </ul>
                 
-            
-            <ul>
-                <li><p className="MA__item__delete" onClick={() => props.deleteOneAidItem(props.oneaid)}><div className="delete__butt"><button type="button">Delete</button></div></p></li>
-            </ul>
+            <p className="MA__item__delete" onClick={() => props.deleteOneAidItem(props.oneaid)}><div className="delete__butt"><button type="button">Delete</button></div></p>
+
             </div>
         </div>
     );

@@ -64,32 +64,36 @@ const NewMA=(props)=>{
                     </div> */}
                     <div className="newMA__buttons">
                         <label>Borough</label>
-                        <input select="text" value={newBorough} onChange={handleBoroughChange}/>
+                        <input select="text"  value={newBorough} onChange={handleBoroughChange}/>
+                        <div className="req__css"><p><span className="req">*</span> Required  </p></div>
                     </div>
                     </li>
                     <li>
                     <div className="newMA__buttons">
                         <label>Name</label>
                         <input type="text" value={newName} onChange={handleNameChange}/>
+                        <div className="req__css"><p><span className="req">*</span> Required </p></div>
                     </div>
                     </li>
                     <li>
                     <div className="newMA__buttons">
                         <label>Category</label>
                         <input type="text" value={newCategory} onChange={handleCategoryChange}/>
+                        <div className="req__css"><p><span className="req">*</span> Required  </p></div>
                     </div>
                     </li>
                     <li>
                     <div className="newMA__buttons">
                         <label>Website</label>
-                        <input type="text" value={newWebsite} onChange={handleWebsiteChange}/>
+                        <input type="text"  value={newWebsite} onChange={handleWebsiteChange}/>
+                        <div className="req__css"><p><span className="req">*</span> Required </p></div>
                     </div>
                     </li>
-                
+                    {/* <input type="email" id="email_input" required /> */}
                     <li>
                     <div className="newMA__buttons">
                         <label>Email</label>
-                        <input type="text" value={newEmail} onChange={handleEmailChange}/>
+                        <input type="text"  value={newEmail} onChange={handleEmailChange}/>
                         <div><input type="submit" value="Submit"/></div>
                     </div>
                     </li>

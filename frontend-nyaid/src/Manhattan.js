@@ -147,6 +147,7 @@ const onMutualAidClick = (mutualaid) => {
     return (
         <div>
             <div className='bronx__Css'>
+            <div className="flower__png"></div>
             <h4>Manhattan Mutual Aid</h4>
                 <div className="new__BXMutualAid section ">
                     {/* {isMutualAidFormVisible ? <NewMA onMutualAidSubmit={onMutualAidSubmit} ></NewMA> : ""} */}
@@ -168,7 +169,7 @@ const onMutualAidClick = (mutualaid) => {
 
                 <div className="new__BXMutualAid section ">
                     {isOneAidFormVisible ? <NewMA onOneAidSubmit={onOneAidSubmit} ></NewMA> : ""}
-                <div onClick={toggleAidForm} className="aid__toggle">{isOneAidFormVisible ? 'Hide New Mutual Aid Form' : 'Display New Mutual Aid Form'}</div>
+                <div onClick={toggleAidForm} className="aid__toggle">{isOneAidFormVisible ? 'Hide New Mutual Aid Form?' : 'Display New Mutual Aid Form'}</div>
                 </div> 
                 <div></div>
                 <div className='OneAid__elements'>

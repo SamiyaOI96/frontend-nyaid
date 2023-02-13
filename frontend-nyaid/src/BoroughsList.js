@@ -24,17 +24,12 @@ const BoroughsList=(props)=>{
     
     
         return (
-            <section className='list__container'>
-                <section>
-                    <h2>New Mutual Aid <div> {oneaidElements}</div></h2>
-                    {/* {props.oneaidData.name} */}
+                <div className='alterting__newaid'> 
+                    <h2>New Mutual Aid </h2>
+                
                     {/* <div> {oneaidElements}</div> */}
-                    {/* <div> {oneaidElements}</div> */}
-
-            
-                </section>
-            </section>
-            
+                    <div className='one__elements'>{oneaidElements}</div>
+                </div>
         )
 
 
