@@ -38,7 +38,7 @@ function Manhattan() {
 
 useEffect(() => {
     console.log('hello')
-    axios.get(`${API_URL}mutualaids/boroughs/?borough_id=2`,).then((response) => {
+    axios.get(`${API_URL}mutualaids/boroughs/?borough_id=3`,).then((response) => {
     setMutualAidData(response.data)
     // mutualaidData(response.data)
     
@@ -50,14 +50,14 @@ console.log("mutualaid",mutualaidData)
 
 useEffect(()=>{
     console.log('broooo')
-    axios.get(`${API_URL}boroughs/mutualaids/?borough_id=2`).then((response) => {
+    axios.get(`${API_URL}boroughs/mutualaids/?borough_id=3`).then((response) => {
     setOneAidData(response.data);
     
     });
 }, []);
 const onMutualAidSubmit = (newMA) => {
     console.log(newMA)
-    axios.post(`${API_URL}mutualaids/boroughs/?borough_id=2`, newMA).then((response) => {
+    axios.post(`${API_URL}mutualaids/boroughs/?borough_id=3`, newMA).then((response) => {
         console.log('Response:', response.data);
         const mutualaid = [...mutualaidData];
     mutualaid.push(response.data);
@@ -71,7 +71,7 @@ const onMutualAidSubmit = (newMA) => {
 
 const onOneAidSubmit = (newMA) => {
     console.log(newMA)
-    axios.post(`${API_URL}mutualaids/boroughs/?borough_id=2`, newMA).then((response) => {
+    axios.post(`${API_URL}mutualaids/boroughs/?borough_id=3`, newMA).then((response) => {
         console.log('Response:', response.data);
         const oneaid = [...oneaidData];
         oneaid.push(response.data);
@@ -90,7 +90,7 @@ const onOneAidSubmit = (newMA) => {
 const deleteOneAidItem = (oneaid) => {
 console.log("in delete")
 
-    axios.delete(`${API_URL}boroughs/mutualaids/?borough_id=2&id=${oneaid.id}`).then((response) => {
+    axios.delete(`${API_URL}boroughs/mutualaids/?borough_id=3&id=${oneaid.id}`).then((response) => {
         console.log(mutualaidData);
         const newMAData = mutualaidData.filter((existingOneAid) => {
             return existingOneAid.id !== oneaid.id
@@ -109,7 +109,7 @@ console.log("in delete")
 const onMutualAidClick = (mutualaid) => {
     console.log(onMutualAidClick)
 
-    axios.get(`${API_URL}boroughs/mutualaids/?borough_id=2&${mutualaid.id}`).then((response) => {
+    axios.get(`${API_URL}boroughs/mutualaids/?borough_id=3&${mutualaid.id}`).then((response) => {
         setMutualAidData([...mutualaidData]);
     }).catch((error) => {
         console.log('Error: Couldn\'t get all aid', error)

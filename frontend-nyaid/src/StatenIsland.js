@@ -121,7 +121,7 @@ const onMutualAidClick = (mutualaid) => {
     };
     const onOneAidClick = (oneaid) => {
         console.log("clicking",onOneAidClick)
-        axios.get(`${API_URL}boroughs/mutualaids/?borough_id=2&${oneaidData.id}`).then((response) => {
+        axios.get(`${API_URL}boroughs/mutualaids/?borough_id=5&${oneaidData.id}`).then((response) => {
         setOneAidData(oneaid);
         // setMutualAidData([...mutualaidData, ...oneaid])
         }).catch((error) => {
