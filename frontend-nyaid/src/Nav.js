@@ -15,8 +15,11 @@ function Nav() {
     return (
     <nav>
         <div className="nav__links">
+        <div className="flower__png"></div>
+        
         <ul>
             <div className='new__linky'>
+
                 <Link style={navStyle} to='/'>
                     <li>DashBoard</li>
                 </Link>
@@ -42,6 +45,7 @@ function Nav() {
                 </Link>
                 </div>
         </ul>
+        {/* <div className="flower__png"></div> */}
         </div>
     </nav>
 

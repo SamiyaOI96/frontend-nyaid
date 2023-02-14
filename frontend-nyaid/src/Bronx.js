@@ -149,7 +149,7 @@ const onMutualAidClick = (mutualaid) => {
     return (
         <div>
             <div className='bronx__Css'>
-            <div className="flower__png"></div>
+            {/* <div className="flower__png"></div> */}
                 <h4>Bronx Mutual Aid</h4>
                 
                 <div className="new__BXMutualAid section ">
