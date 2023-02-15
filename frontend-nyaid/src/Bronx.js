@@ -80,8 +80,8 @@ const onOneAidSubmit = (newMA) => {
     console.log("test",oneaid)
     setOneAidData(oneaid);
     setMutualAidData([...mutualaidData, ...oneaid])
-    console.log("HI",mutualaidData)
-    console.log("YP",oneaid)
+    // console.log("HI",mutualaidData)
+    // console.log("YP",oneaid)
     }).catch((error) => {
     console.log('Error: Couldn\'t create new mutualaid', error);
     alert('Couldn\'t create new Mutual aid')
@@ -109,7 +109,7 @@ console.log("in delete")
 
 
 const onMutualAidClick = (mutualaid) => {
-    console.log(onMutualAidClick)
+    // console.log(onMutualAidClick)
 
     axios.get(`${API_URL}boroughs/mutualaids/?borough_id=2&${mutualaid.id}`).then((response) => {
         setMutualAidData([...mutualaidData]);

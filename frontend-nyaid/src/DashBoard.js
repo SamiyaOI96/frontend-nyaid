@@ -5,6 +5,7 @@ import React from 'react';
 const DashBoard=()=>{
     return(
         <div>
+            <div className='dashy_css'>
             <h3>Mutual Aid across the Boroughs</h3>
                 <div className='header__ACK'>
                 <h11>Land Acknowledgement</h11>
@@ -24,6 +25,7 @@ const DashBoard=()=>{
                 <a href="https://nlltribe.com/land-acknowledgement/"><footer>The Nanticoke Lenni-Lenape Tribal Nation</footer></a>
                 
                 </div>
+            </div>
             </div>
         </div>
         //land acknowledgement at the bottom of the page with link to map the indegenious names of boroughs of ny
