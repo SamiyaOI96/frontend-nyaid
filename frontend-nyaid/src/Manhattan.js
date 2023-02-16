@@ -169,7 +169,7 @@ const onMutualAidClick = (mutualaid) => {
 
                 <div className="new__BXMutualAid section ">
                     {isOneAidFormVisible ? <NewMA onOneAidSubmit={onOneAidSubmit} ></NewMA> : ""}
-                <div onClick={toggleAidForm} className="aid__toggle">{isOneAidFormVisible ? 'Hide New Mutual Aid Form?' : 'Display New Mutual Aid Form'}</div>
+                <div onClick={toggleAidForm} className="aid__toggle">{isOneAidFormVisible ? 'Hide New Mutual Aid Form?' : 'Submit New Mutual Aid'}</div>
                 </div> 
                 <div></div>
                 <div className='OneAid__elements'>
